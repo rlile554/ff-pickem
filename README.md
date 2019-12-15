@@ -1,2 +1,4 @@
-# ff-pickem
-fantasy football application
+# FF Pick'em
+A Fantasy Football application.
+
+Created by Ryan Lile and Jerrod Mathis.
