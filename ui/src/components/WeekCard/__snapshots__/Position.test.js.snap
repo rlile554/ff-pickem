@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Position to match snapshot 1`] = `
+<div
+  className="sc-bdVaJa hvvqAj"
+>
+  <div
+    className="sc-bwzfXH fzysLj"
+    id="position"
+  >
+    QB
+  </div>
+  <div
+    className="sc-htpNat klVHJR"
+    id="iconDiv"
+  >
+    <svg
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        height="11"
+        rx="2"
+        ry="2"
+        width="18"
+        x="3"
+        y="11"
+      />
+      <path
+        d="M7 11V7a5 5 0 0 1 10 0v4"
+      />
+    </svg>
+  </div>
+  <div
+    className="sc-bxivhb bfViTE"
+    id="name"
+  >
+    Bob Guy
+  </div>
+  <div
+    className="sc-ifAKCX jlmnUT"
+    id="points"
+  >
+    123
+  </div>
+</div>
+`;

@@ -1,8 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const MyTeam = (props) => {
+import WeekCard from '../WeekCard/WeekCard';
+
+const Container = styled.div`
+    margin: 8px;
+`;
+
+const MyTeam = props => {
     return (
-        <h1>My Team</h1>
+        <Container>
+            <h1>My Team</h1>
+            <WeekCard weekNumber={1} points={12345}/>
+        </Container>
     );
 };
 

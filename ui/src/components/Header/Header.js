@@ -9,6 +9,7 @@ const Container = styled.div`
     height: 50px;
     display: flex;
     justify-content: space-between;
+    color: #535353;
 `;
 
 const Nav = styled.ul`
@@ -26,7 +27,8 @@ const NavLink = styled.li`
     display: flex;
     align-items: center;
     justify-content: center;
-    color: black;
+    color: #535353;
+    font-weight: bold;
     &:hover {
         background-color: #9B9B9B;
         color: white;
@@ -40,6 +42,7 @@ const UserInfo = styled.div`
 
 const Name = styled.div`
     font-size: 36;
+    font-weight: bold;
     align-self: center;
 `;
 
