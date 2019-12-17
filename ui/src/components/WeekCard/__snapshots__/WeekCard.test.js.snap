@@ -1,0 +1,213 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeekCard matches the snapshot 1`] = `
+<div
+  className="sc-EHOje UBhwR"
+>
+  <div
+    className="sc-htoDjs bPOjW"
+  >
+    <svg
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+      />
+      <path
+        d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+      />
+    </svg>
+  </div>
+  <div
+    className="sc-bZQynM hElvZM"
+  >
+    Week 
+    1
+  </div>
+  <div
+    className="sc-gzVnrw ddarIT"
+  >
+    points: 12345
+  </div>
+  <div
+    className="sc-dnqmqq hMmkfQ"
+    id="positionsContainer"
+  >
+    <div
+      className="sc-bdVaJa hvvqAj"
+    >
+      <div
+        className="sc-bwzfXH fzysLj"
+        id="position"
+      >
+        QB
+      </div>
+      <div
+        className="sc-htpNat klVHJR"
+        id="iconDiv"
+      >
+        <svg
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            height="11"
+            rx="2"
+            ry="2"
+            width="18"
+            x="3"
+            y="11"
+          />
+          <path
+            d="M7 11V7a5 5 0 0 1 10 0v4"
+          />
+        </svg>
+      </div>
+      <div
+        className="sc-bxivhb bfViTE"
+        id="name"
+      >
+        Tom Brady
+      </div>
+      <div
+        className="sc-ifAKCX jlmnUT"
+        id="points"
+      >
+        12345
+      </div>
+    </div>
+    <div
+      className="sc-bdVaJa hvvqAj"
+    >
+      <div
+        className="sc-bwzfXH fzysLj"
+        id="position"
+      >
+        RB
+      </div>
+      <div
+        className="sc-htpNat klVHJR"
+        id="iconDiv"
+      />
+      <div
+        className="sc-bxivhb bfViTE"
+        id="name"
+      >
+        Mark Ingram
+      </div>
+      <div
+        className="sc-ifAKCX jlmnUT"
+        id="points"
+      >
+        2233
+      </div>
+    </div>
+    <div
+      className="sc-bdVaJa hvvqAj"
+    >
+      <div
+        className="sc-bwzfXH fzysLj"
+        id="position"
+      >
+        WR
+      </div>
+      <div
+        className="sc-htpNat klVHJR"
+        id="iconDiv"
+      />
+      <div
+        className="sc-bxivhb bfViTE"
+        id="name"
+      >
+        Sammie Watkins
+      </div>
+      <div
+        className="sc-ifAKCX jlmnUT"
+        id="points"
+      >
+        323
+      </div>
+    </div>
+    <div
+      className="sc-bdVaJa hvvqAj"
+    >
+      <div
+        className="sc-bwzfXH fzysLj"
+        id="position"
+      >
+        D
+      </div>
+      <div
+        className="sc-htpNat klVHJR"
+        id="iconDiv"
+      >
+        <svg
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            height="11"
+            rx="2"
+            ry="2"
+            width="18"
+            x="3"
+            y="11"
+          />
+          <path
+            d="M7 11V7a5 5 0 0 1 10 0v4"
+          />
+        </svg>
+      </div>
+      <div
+        className="sc-bxivhb bfViTE"
+        id="name"
+      >
+        Patriots
+      </div>
+      <div
+        className="sc-ifAKCX jlmnUT"
+        id="points"
+      >
+        1
+      </div>
+    </div>
+  </div>
+</div>
+`;
