@@ -1,33 +1,30 @@
 package com.fantasyfootball.security;
 
 import com.fantasyfootball.model.User;
+import com.fantasyfootball.repos.UserRepository;
+import com.fantasyfootball.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.oauth2.resource.AuthoritiesExtractor;
-import org.springframework.boot.autoconfigure.security.oauth2.resource.PrincipalExtractor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.security.oauth2.client.OAuth2ClientContext;
-import org.springframework.security.oauth2.client.OAuth2RestOperations;
-import org.springframework.security.oauth2.client.OAuth2RestTemplate;
-import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResourceDetails;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.mapping.GrantedAuthoritiesMapper;
+import org.springframework.security.oauth2.client.oidc.userinfo.OidcUserService;
+import org.springframework.security.oauth2.core.oidc.user.OidcUserAuthority;
 
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Configuration
+//@EnableWebSecurity(debug = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final CustomOidcUserService oidcUserService;
-    private final GoogleAuthoritiesExtractor googleAuthoritiesExtractor;
+    @Autowired
+    private OidcUserService oidcUserService;
 
-    public SecurityConfig(CustomOidcUserService oidcUserService, GoogleAuthoritiesExtractor googleAuthoritiesExtractor) {
-        this.oidcUserService = oidcUserService;
-        this.googleAuthoritiesExtractor = googleAuthoritiesExtractor;
-    }
+    @Autowired
+    private UserService userService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -42,20 +39,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public AuthoritiesExtractor authoritiesExtractor(OAuth2RestOperations template) {
-        return map -> {
-            String url = (String) map.get("organizations_url");
-            @SuppressWarnings("unchecked")
-            List<Map<String, Object>> orgs = template.getForObject(url, List.class);
-            if (orgs.stream().anyMatch(org -> "spring-projects".equals(org.get("login")))) {
-                return AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_USER");
+    public GrantedAuthoritiesMapper userAuthoritiesMapper() {
+        return (authorities) -> {
+            Set<GrantedAuthority> mappedAuthorities = new HashSet<>();
+            OidcUserAuthority userAuthority = (OidcUserAuthority)authorities.toArray()[0];
+            String email = userAuthority.getAttributes().get("email").toString();
+            Optional<User> user = userService.findByEmail(email);
+            if(user.isPresent()){
+                OidcUserAuthority newUserAuthority = new OidcUserAuthority(user.get().getRole(), userAuthority.getIdToken(),
+                        userAuthority.getUserInfo());
+                mappedAuthorities.add(newUserAuthority);
             }
-            throw new BadCredentialsException("Not in Spring Team");
+            return mappedAuthorities;
         };
-    }
-
-    @Bean
-    public OAuth2RestTemplate oauth2RestTemplate(OAuth2ProtectedResourceDetails resource) {
-        return new OAuth2RestTemplate(resource);
     }
 }
